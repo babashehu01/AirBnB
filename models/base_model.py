@@ -7,7 +7,6 @@ from datetime import datetime
 class BaseModel:
     """This defines all common attributes/methods for other classes"""
 
-
     def __init__(self, **kwargs):
         """Initalizes a new instance"""
         self.id = uuid4().hex
@@ -22,7 +21,8 @@ class BaseModel:
 
     def __str__(self):
         """String representation of the instance"""
-        return ('[{}] ({}) {}'.format(self.__class__.__name__, self.id, self.__dict__))
+        return ('[{}] ({}) {}'.format(
+            self.__class__.__name__, self.id, self.__dict__))
 
     def save(self):
         """updates the public instance attribute updated_at
